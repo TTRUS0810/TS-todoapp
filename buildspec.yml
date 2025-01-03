@@ -4,12 +4,15 @@ phases:
   install:
     runtime-versions:
       nodejs: 14
+  
   pre_build:
     commands:
-      - npm ci
+      - npm install
+  
   build:
     commands:
       - npm run build
+  
   post_build:
     commands:
       - echo "Build completed on `date`"
@@ -17,9 +20,8 @@ phases:
 artifacts:
   files:
     - '**/*'
-    base-directory: 'build'
-    
+  base-directory: 'build'
+
 cache:
   paths:
-    - 'node_modules/**/*'    
-
+    - node_modules/**/*

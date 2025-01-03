@@ -22,7 +22,7 @@ phases:
   post_build:
     commands:
       - aws s3 sync build/ s3://ts-todo-app
-      - aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id ETHJYQ4H3NZW4 --paths "/*"
 
 artifacts:
   files:

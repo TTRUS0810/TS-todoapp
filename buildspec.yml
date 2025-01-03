@@ -21,7 +21,8 @@ phases:
   
   post_build:
     commands:
-      - echo "Build completed on `date`"
+      - aws s3 sync build/ s3://your-bucket-name
+      - aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
 
 artifacts:
   files:
